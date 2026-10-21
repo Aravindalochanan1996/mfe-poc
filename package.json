@@ -1,0 +1,14 @@
+{
+  "name": "d4-mfe-poc",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Workspace runner for the D4 Insight micro-frontend POC (4 standalone sibling apps)",
+  "scripts": {
+    "dev": "concurrently -n design-system,finance,recruitment,parent -c yellow,blue,magenta,green \"npm run dev --prefix d4-design-system\" \"npm run start --prefix d4-finance\" \"npm run start --prefix d4-recruitment\" \"npm run start --prefix d4-parent\"",
+    "install:all": "npm install --prefix d4-design-system && npm install --prefix d4-parent && npm install --prefix d4-finance && npm install --prefix d4-recruitment",
+    "build:design-system": "npm run build --prefix d4-design-system"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

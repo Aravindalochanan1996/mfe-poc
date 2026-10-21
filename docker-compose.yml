@@ -1,0 +1,30 @@
+services:
+  auth-api:
+    build: ./d4-auth-api
+    ports:
+      - "8003:8003"
+    env_file:
+      - ./d4-auth-api/.env
+    volumes:
+      - ./d4-auth-api:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8003 --reload
+
+  finance-api:
+    build: ./d4-finance-api
+    ports:
+      - "8001:8001"
+    env_file:
+      - ./d4-finance-api/.env
+    volumes:
+      - ./d4-finance-api:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8001 --reload
+
+  recruitment-api:
+    build: ./d4-recruitment-api
+    ports:
+      - "8002:8002"
+    env_file:
+      - ./d4-recruitment-api/.env
+    volumes:
+      - ./d4-recruitment-api:/app
+    command: uvicorn main:app --host 0.0.0.0 --port 8002 --reload

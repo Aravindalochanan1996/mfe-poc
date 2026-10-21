@@ -1,0 +1,25 @@
+{
+  "name": "@d4/auth",
+  "version": "0.1.0",
+  "description": "Login + RBAC context for the D4 Insight micro-frontend POC (host-only, not federated)",
+  "private": true,
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch"
+  },
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.5",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
